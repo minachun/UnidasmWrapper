@@ -211,6 +211,7 @@ namespace unidasmwrapper
         {
             // ƒAƒvƒŠ‚ÌI—¹
             this.config.SaveConfig(this.config.config_filename);
+            this.Close();
         }
 
         private void MI_Unite8x2_Click(object sender, EventArgs e)

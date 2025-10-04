@@ -37,14 +37,14 @@
             MI_Architecture = new ToolStripMenuItem();
             MI_Setting = new ToolStripMenuItem();
             menuit_SetUnidasm = new ToolStripMenuItem();
-            statusStrip1 = new StatusStrip();
-            ts_unidasmchecker = new ToolStripStatusLabel();
-            ts_SelectedCPU = new ToolStripStatusLabel();
-            ts_Status = new ToolStripStatusLabel();
             MI_Utility = new ToolStripMenuItem();
             MI_Unite8x2 = new ToolStripMenuItem();
             MI_Unite8x4 = new ToolStripMenuItem();
             MI_Unite16x2 = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            ts_unidasmchecker = new ToolStripStatusLabel();
+            ts_SelectedCPU = new ToolStripStatusLabel();
+            ts_Status = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -89,14 +89,14 @@
             // 
             MI_CPUType.Enabled = false;
             MI_CPUType.Name = "MI_CPUType";
-            MI_CPUType.Size = new Size(151, 22);
+            MI_CPUType.Size = new Size(180, 22);
             MI_CPUType.Text = "CPU(&C)";
             // 
             // MI_Architecture
             // 
             MI_Architecture.Enabled = false;
             MI_Architecture.Name = "MI_Architecture";
-            MI_Architecture.Size = new Size(151, 22);
+            MI_Architecture.Size = new Size(180, 22);
             MI_Architecture.Text = "アーキテクチャ(&A)";
             // 
             // MI_Setting
@@ -112,6 +112,32 @@
             menuit_SetUnidasm.Size = new Size(169, 22);
             menuit_SetUnidasm.Text = "unidasmの指定(&U)";
             menuit_SetUnidasm.Click += menuit_SetUnidasm_Click;
+            // 
+            // MI_Utility
+            // 
+            MI_Utility.DropDownItems.AddRange(new ToolStripItem[] { MI_Unite8x2, MI_Unite8x4, MI_Unite16x2 });
+            MI_Utility.Name = "MI_Utility";
+            MI_Utility.Size = new Size(97, 20);
+            MI_Utility.Text = "ユーティリティ(&U))";
+            // 
+            // MI_Unite8x2
+            // 
+            MI_Unite8x2.Name = "MI_Unite8x2";
+            MI_Unite8x2.Size = new Size(192, 22);
+            MI_Unite8x2.Text = "ファイル連結(8bitx2)(&2)";
+            MI_Unite8x2.Click += MI_Unite8x2_Click;
+            // 
+            // MI_Unite8x4
+            // 
+            MI_Unite8x4.Name = "MI_Unite8x4";
+            MI_Unite8x4.Size = new Size(192, 22);
+            MI_Unite8x4.Text = "ファイル連結(8bitx4)(&4)";
+            // 
+            // MI_Unite16x2
+            // 
+            MI_Unite16x2.Name = "MI_Unite16x2";
+            MI_Unite16x2.Size = new Size(192, 22);
+            MI_Unite16x2.Text = "ファイル連結(16bitx2)(&6)";
             // 
             // statusStrip1
             // 
@@ -139,32 +165,6 @@
             ts_Status.Name = "ts_Status";
             ts_Status.Size = new Size(42, 17);
             ts_Status.Text = "Status:";
-            // 
-            // MI_Utility
-            // 
-            MI_Utility.DropDownItems.AddRange(new ToolStripItem[] { MI_Unite8x2, MI_Unite8x4, MI_Unite16x2 });
-            MI_Utility.Name = "MI_Utility";
-            MI_Utility.Size = new Size(97, 20);
-            MI_Utility.Text = "ユーティリティ(&U))";
-            // 
-            // MI_Unite8x2
-            // 
-            MI_Unite8x2.Name = "MI_Unite8x2";
-            MI_Unite8x2.Size = new Size(192, 22);
-            MI_Unite8x2.Text = "ファイル連結(8bitx2)(&2)";
-            MI_Unite8x2.Click += MI_Unite8x2_Click;
-            // 
-            // MI_Unite8x4
-            // 
-            MI_Unite8x4.Name = "MI_Unite8x4";
-            MI_Unite8x4.Size = new Size(186, 22);
-            MI_Unite8x4.Text = "ファイル連結(8bitx4)(&4)";
-            // 
-            // MI_Unite16x2
-            // 
-            MI_Unite16x2.Name = "MI_Unite16x2";
-            MI_Unite16x2.Size = new Size(192, 22);
-            MI_Unite16x2.Text = "ファイル連結(16bitx2)(&6)";
             // 
             // Form1
             // 
