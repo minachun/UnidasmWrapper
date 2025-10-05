@@ -30,6 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             MI_Files = new ToolStripMenuItem();
+            MI_OpenBinary = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             MI_Exit = new ToolStripMenuItem();
             MI_Select = new ToolStripMenuItem();
@@ -44,7 +45,9 @@
             statusStrip1 = new StatusStrip();
             ts_unidasmchecker = new ToolStripStatusLabel();
             ts_SelectedCPU = new ToolStripStatusLabel();
+            ts_SelectedArch = new ToolStripStatusLabel();
             ts_Status = new ToolStripStatusLabel();
+            tab_Main = new TabControl();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -60,21 +63,28 @@
             // 
             // MI_Files
             // 
-            MI_Files.DropDownItems.AddRange(new ToolStripItem[] { toolStripSeparator1, MI_Exit });
+            MI_Files.DropDownItems.AddRange(new ToolStripItem[] { MI_OpenBinary, toolStripSeparator1, MI_Exit });
             MI_Files.Name = "MI_Files";
             MI_Files.Size = new Size(67, 20);
             MI_Files.Text = "ファイル(&F)";
             MI_Files.Click += ファイルToolStripMenuItem_Click;
             // 
+            // MI_OpenBinary
+            // 
+            MI_OpenBinary.Name = "MI_OpenBinary";
+            MI_OpenBinary.Size = new Size(186, 22);
+            MI_OpenBinary.Text = "Binaryファイルを開く(&O)";
+            MI_OpenBinary.Click += MI_OpenBinary_Click;
+            // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(183, 6);
             // 
             // MI_Exit
             // 
             MI_Exit.Name = "MI_Exit";
-            MI_Exit.Size = new Size(180, 22);
+            MI_Exit.Size = new Size(186, 22);
             MI_Exit.Text = "終了(&X)";
             MI_Exit.Click += MI_Exit_Click;
             // 
@@ -89,14 +99,14 @@
             // 
             MI_CPUType.Enabled = false;
             MI_CPUType.Name = "MI_CPUType";
-            MI_CPUType.Size = new Size(180, 22);
+            MI_CPUType.Size = new Size(151, 22);
             MI_CPUType.Text = "CPU(&C)";
             // 
             // MI_Architecture
             // 
             MI_Architecture.Enabled = false;
             MI_Architecture.Name = "MI_Architecture";
-            MI_Architecture.Size = new Size(180, 22);
+            MI_Architecture.Size = new Size(151, 22);
             MI_Architecture.Text = "アーキテクチャ(&A)";
             // 
             // MI_Setting
@@ -141,7 +151,7 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { ts_unidasmchecker, ts_SelectedCPU, ts_Status });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { ts_unidasmchecker, ts_SelectedCPU, ts_SelectedArch, ts_Status });
             statusStrip1.Location = new Point(0, 428);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(800, 22);
@@ -160,17 +170,33 @@
             ts_SelectedCPU.Size = new Size(64, 17);
             ts_SelectedCPU.Text = "CPU=none";
             // 
+            // ts_SelectedArch
+            // 
+            ts_SelectedArch.Name = "ts_SelectedArch";
+            ts_SelectedArch.Size = new Size(67, 17);
+            ts_SelectedArch.Text = "Arch=none";
+            // 
             // ts_Status
             // 
             ts_Status.Name = "ts_Status";
             ts_Status.Size = new Size(42, 17);
             ts_Status.Text = "Status:";
             // 
+            // tab_Main
+            // 
+            tab_Main.Dock = DockStyle.Fill;
+            tab_Main.Location = new Point(0, 24);
+            tab_Main.Name = "tab_Main";
+            tab_Main.SelectedIndex = 0;
+            tab_Main.Size = new Size(800, 404);
+            tab_Main.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tab_Main);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -205,5 +231,8 @@
         private ToolStripMenuItem MI_Unite8x2;
         private ToolStripMenuItem MI_Unite8x4;
         private ToolStripMenuItem MI_Unite16x2;
+        private ToolStripMenuItem MI_OpenBinary;
+        private ToolStripStatusLabel ts_SelectedArch;
+        private TabControl tab_Main;
     }
 }

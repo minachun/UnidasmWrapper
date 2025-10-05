@@ -220,6 +220,24 @@ namespace unidasmwrapper
             var frm = new UniteFile();
             frm.ShowDialog();
         }
+
+        private void MI_OpenBinary_Click(object sender, EventArgs e)
+        {
+            // バイナリファイルを開く
+            var ofd = new OpenFileDialog();
+            ofd.CheckFileExists = true;
+            ofd.CheckPathExists = true;
+            ofd.Title = "逆アセンブルするファイルを指定してください";
+            ofd.Multiselect = false;
+            ofd.Filter = "全てのファイル(*.*)|*.*";
+            ofd.FilterIndex = 0;
+            if ( ofd.ShowDialog() == DialogResult.OK )
+            {
+                var tp = new TabPage(Path.GetFileName(ofd.FileName));
+                this.tab_Main.TabPages.Add(tp);
+                this.tab_Main.SelectedTab = tp;
+            }
+        }
     }
 
     public class Config
