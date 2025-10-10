@@ -236,6 +236,10 @@ namespace unidasmwrapper
                 var tp = new TabPage(Path.GetFileName(ofd.FileName));
                 this.tab_Main.TabPages.Add(tp);
                 this.tab_Main.SelectedTab = tp;
+                var b = new BinaryTextBox();
+                b.Datas = File.ReadAllBytes(ofd.FileName);
+                tp.Controls.Add(b);
+                b.Dock = DockStyle.Fill;
             }
         }
     }
